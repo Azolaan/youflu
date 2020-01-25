@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 // import logo from './logo.svg';
 // import './App.css';
-import MapComponent from './map-component'
+import UserLogin from "./user-component/index";
 
 function App() {
   return (
     <div className="App">
-      <MapComponent />
+      <UserLogin></UserLogin>
     </div>
   );
 }
