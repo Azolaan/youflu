@@ -1,6 +1,4 @@
 import React from 'react'
-// import logo from './logo.svg';
-// import './App.css'
 import { ThemeProvider } from '@rmwc/theme'
 import MapComponent from './map-component'
 import Filter from './filter'
@@ -16,7 +14,8 @@ class App extends React.Component {
   state = {
     page: 'map',
     drawerOpen: false,
-    filter: null
+    filter: 'flu',
+    center: [-79.9209395, 43.2587083]
   }
 
   _handleOpenDrawer = () => {
@@ -31,18 +30,22 @@ class App extends React.Component {
     this.setState({ filter })
   }
 
+  _handleSetLatLng = (latlng) => {
+    this.setState({ center: [latlng.lng, latlng.lat] })
+  }
+
   render() {
     return (
       <ThemeProvider options={{ primary: 'hsl(206, 99%, 31%)' }}>
         <div className="App">
-          <AppBar onOpenDrawer={this._handleOpenDrawer} />
+          <AppBar onOpenDrawer={this._handleOpenDrawer} setLatLng={this._handleSetLatLng}/>
           <Filter 
             drawerOpen={this.state.drawerOpen}
             onCloseDrawer={this._handleCloseDrawer}
             filter={this.state.filter}
             setFilter={this._handleSetFilter}
           />
-          {this.state.page === 'map' && <MapComponent />}
+          <MapComponent center={this.state.center} filter={this.state.filter}/>
         </div>
       </ThemeProvider>
     )

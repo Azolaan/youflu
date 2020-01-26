@@ -11,12 +11,12 @@ import '@material/list/dist/mdc.list.css'
 
 class Filter extends React.Component {
     _renderList = () => {
-        let diseaseList = _.map(diseases, (disease) => 
+        let diseaseList = _.map(diseases, (name, key) => 
                 <SimpleListItem
-                    text={_.capitalize(disease)}
-                    activated={disease === this.props.filter}
-                    metaIcon={disease === this.props.filter && 'check'}
-                    onClick={() => this.props.setFilter(disease)}
+                    text={name}
+                    activated={key === this.props.filter}
+                    metaIcon={key === this.props.filter && 'check'}
+                    onClick={() => this.props.setFilter(key)}
                 />
         )
 

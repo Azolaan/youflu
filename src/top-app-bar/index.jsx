@@ -1,7 +1,6 @@
 import React from 'react'
 import { TopAppBar, TopAppBarRow, TopAppBarSection, TopAppBarActionItem, TopAppBarFixedAdjust, TopAppBarNavigationIcon } from '@rmwc/top-app-bar'
-import { TextField } from '@rmwc/textfield'
-import { ThemeProvider } from '@rmwc/theme'
+import { AutocompleteSearchInput } from './autocomplete'
 
 import './index.css'
 
@@ -16,7 +15,7 @@ class AppBar extends React.Component {
                     <TopAppBarRow>
                         <TopAppBarSection alignStart>
                             <TopAppBarNavigationIcon icon="menu" onClick={this.props.onOpenDrawer} />
-                            <TextField className="app-bar-search-field" placeholder="Search..." icon="search" />
+                            <AutocompleteSearchInput setLatLng={this.props.setLatLng}/>
                         </TopAppBarSection>
                         <TopAppBarSection alignEnd>
                             <TopAppBarActionItem icon="account_circle" />
