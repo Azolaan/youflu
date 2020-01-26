@@ -17,6 +17,7 @@ class Filter extends React.Component {
                     activated={key === this.props.filter}
                     metaIcon={key === this.props.filter && 'check'}
                     onClick={() => this.props.setFilter(key)}
+                    style={key === this.props.filter && {color: "#4285F4" }}
                 />
         )
 

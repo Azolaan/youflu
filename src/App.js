@@ -54,7 +54,7 @@ class App extends React.Component {
     let startPage;
     if (this.state.isLoggedIn) {
       startPage = (
-        <ThemeProvider options={{ primary: "hsl(206, 99%, 31%)" }}>
+        <ThemeProvider options={{ primary: "#4285F4", secondary: "#4285F4" }} wrap>
           <div className="App">
             <AppBar
               onOpenDrawer={this._handleOpenDrawer}
