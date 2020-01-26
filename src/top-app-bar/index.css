@@ -1,0 +1,13 @@
+/* .app-bar .mdc-top-app-bar__section {
+    width: 100%;
+} */
+
+.app-bar .app-bar-search-field {
+    height: 40px;
+    width: 50%;
+    margin-left: 50px
+}
+
+.app-bar .app-bar-search-field .rmwc-icon {
+    bottom: 9px;
+}
