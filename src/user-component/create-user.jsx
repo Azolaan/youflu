@@ -101,7 +101,7 @@ export default class CreateUser extends Component {
               onChange={this._updatePostalCode}
             />
 
-            <Button type="submit" label="Submit Data" onClick={} raised />
+            <Button type="submit" label="Submit Data" raised />
           </ThemeProvider>
         </form>
       </div>
