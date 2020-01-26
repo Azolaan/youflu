@@ -1,12 +1,8 @@
 import React from "react";
-// import logo from './logo.svg';
-// import './App.css'
 import { ThemeProvider } from "@rmwc/theme";
 import MapComponent from "./map-component";
 import Filter from "./filter";
 import AppBar from "./top-app-bar";
-import LoginUser from "./user-component/login-user";
-import CreateUser from "./user-component/create-user";
 
 import "@material/icon-button/dist/mdc.icon-button.css";
 import "@material/textfield/dist/mdc.textfield.css";
@@ -18,7 +14,8 @@ class App extends React.Component {
   state = {
     page: "map",
     drawerOpen: false,
-    filter: null
+    filter: "flu",
+    center: [-79.9209395, 43.2587083]
   };
 
   _handleOpenDrawer = () => {
@@ -33,8 +30,28 @@ class App extends React.Component {
     this.setState({ filter });
   };
 
+  _handleSetLatLng = latlng => {
+    this.setState({ center: [latlng.lng, latlng.lat] });
+  };
+
   render() {
-    return <CreateUser></CreateUser>;
+    return (
+      <ThemeProvider options={{ primary: "hsl(206, 99%, 31%)" }}>
+        <div className="App">
+          <AppBar
+            onOpenDrawer={this._handleOpenDrawer}
+            setLatLng={this._handleSetLatLng}
+          />
+          <Filter
+            drawerOpen={this.state.drawerOpen}
+            onCloseDrawer={this._handleCloseDrawer}
+            filter={this.state.filter}
+            setFilter={this._handleSetFilter}
+          />
+          <MapComponent center={this.state.center} filter={this.state.filter} />
+        </div>
+      </ThemeProvider>
+    );
   }
 }
 
