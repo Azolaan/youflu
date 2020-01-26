@@ -8,7 +8,7 @@ const Map = ReactMapboxGl({
 class MapComponent extends React.Component {
     render() {
         return <Map
-            style="mapbox://styles/mapbox/dark-v10"
+            style="mapbox://styles/mapbox/light-v10"
             center={[-79.9209395, 43.2587083]}
             containerStyle={{
             height: '100vh',
