@@ -6,6 +6,7 @@ import AppBar from "./top-app-bar";
 import CreateUser from "./user-component/create-user";
 import LoginUser from "./user-component/login-user";
 
+import '@rmwc/icon/icon.css'
 import "@material/icon-button/dist/mdc.icon-button.css";
 import "@material/textfield/dist/mdc.textfield.css";
 import "@material/floating-label/dist/mdc.floating-label.css";

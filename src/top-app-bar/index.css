@@ -1,3 +1,7 @@
+.app-bar .app-bar-title {
+    width: 75px;
+}
+
 .app-bar .app-bar-search {
     width: 100%;
 }

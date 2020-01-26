@@ -4,7 +4,7 @@ import {
   TopAppBarRow,
   TopAppBarSection,
   TopAppBarActionItem,
-  TopAppBarFixedAdjust,
+  TopAppBarTitle,
   TopAppBarNavigationIcon
 } from "@rmwc/top-app-bar";
 import { AutocompleteSearchInput } from "./autocomplete";
@@ -49,6 +49,7 @@ class AppBar extends React.Component {
                 icon="menu"
                 onClick={this.props.onOpenDrawer}
               />
+              <TopAppBarTitle className="app-bar-title">YouFlu</TopAppBarTitle>
               <AutocompleteSearchInput setLatLng={this.props.setLatLng} />
             </TopAppBarSection>
             <TopAppBarSection alignEnd>

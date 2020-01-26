@@ -6,11 +6,12 @@ import "./index.css";
 import { TextField } from "@rmwc/textfield";
 import { ThemeProvider } from "@rmwc/theme";
 import { Button } from "@rmwc/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { Icon } from '@rmwc/icon'
+import logo from '../logo/sheep.svg'
 
 const getUserIcon = () => {
-  return <FontAwesomeIcon className="user-icon" icon={faUser} />;
+    return <Icon className="user-panel-icon" icon={{ icon: logo, style: { fontSize: '150px', marginTop: '100px' } }}/>
 };
 
 export default class LoginUser extends Component {
@@ -18,12 +19,13 @@ export default class LoginUser extends Component {
     return (
       <div className="user-panel login-panel">
         {getUserIcon()}
+        <div className="user-panel-slogan">Join the Herd!</div>
         <form method="get">
           <ThemeProvider
             className="theme-provider"
             options={{
-              primary: "#01599d",
-              secondary: "#01599d"
+              primary: "#4285F4",
+              secondary: "#4285F4"
             }}
           >
             <TextField

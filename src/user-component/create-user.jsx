@@ -6,11 +6,11 @@ import "./index.css";
 import { TextField } from "@rmwc/textfield";
 import { ThemeProvider } from "@rmwc/theme";
 import { Button } from "@rmwc/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStreetView } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from '@rmwc/icon'
+import logo from '../logo/sheep.svg'
 
 const getUserIcon = () => {
-  return <FontAwesomeIcon className="user-icon" icon={faStreetView} />;
+  return <Icon className="user-panel-icon" icon={{ icon: logo, style: { fontSize: '150px', marginTop: '100px' } }}/>
 };
 
 export default class CreateUser extends Component {
@@ -71,12 +71,13 @@ export default class CreateUser extends Component {
     return (
       <div className="user-panel create-panel">
         {getUserIcon()}
+        <div className="user-panel-slogan">Join the Herd!</div>
         <form>
           <ThemeProvider
             className="theme-provider"
             options={{
-              primary: "#01599d",
-              secondary: "#01599d"
+              primary: "#4285F4",
+              secondary: "#4285F4"
             }}
           >
             <TextField
@@ -102,7 +103,12 @@ export default class CreateUser extends Component {
               onChange={this._updatePostalCode}
             />
 
-            <Button type="submit" label="Create Account" onClick={this.props.onUserRegister} raised />
+            <Button
+              className="create-panel-create-button"
+              type="submit"
+              label="Create Account"
+              onClick={this.props.onUserRegister}
+              raised />
           </ThemeProvider>
         </form>
       </div>

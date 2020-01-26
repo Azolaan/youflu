@@ -33,3 +33,20 @@
   border: solid 2px #01599d;
   background-color: white;
 }
+
+.user-panel-logo {
+  font-size: 150px;
+}
+
+.user-panel-slogan {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.user-panel .input {
+  margin-bottom: 20px;
+}
+
+.create-panel-create-button {
+  margin-top: 20px;
+}
