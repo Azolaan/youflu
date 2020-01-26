@@ -59,6 +59,7 @@ export default class UserPanel extends Component {
               height: "300px"
             }}
           >
+            <DialogTitle>Vaccinated For</DialogTitle>
             {this.getDiseaseCheckbox()}
           </div>
 

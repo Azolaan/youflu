@@ -38,8 +38,16 @@ export default class LoginUser extends Component {
               outlined
               label="Password"
             />
-
-            <Button type="submit" label="Login" raised />
+            <Button
+              className="account-button account-login"
+              type="submit"
+              label="Login"
+              raised
+            />
+            <div>
+              Want to participate?
+              <Button label="Sign Up"></Button>
+            </div>
           </ThemeProvider>
         </form>
       </div>

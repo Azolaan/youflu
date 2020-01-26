@@ -23,3 +23,13 @@
   border: solid 2px #01599d;
   border-radius: 50%;
 }
+
+.account-button {
+  margin: 20px;
+  width: 300px;
+}
+
+.account-create {
+  border: solid 2px #01599d;
+  background-color: white;
+}
