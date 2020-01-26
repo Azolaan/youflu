@@ -37,16 +37,22 @@ export default class LoginUser extends Component {
               className="input input-user-password"
               outlined
               label="Password"
+              type="password"
             />
             <Button
               className="account-button account-login"
               type="submit"
               label="Login"
+              onClick={this.props.onUserLogin}
               raised
             />
             <div>
               Want to participate?
-              <Button label="Sign Up"></Button>
+              <Button
+                onClick={this.props.onUserSignUp}
+                label="Sign Up"
+              >
+              </Button>
             </div>
           </ThemeProvider>
         </form>

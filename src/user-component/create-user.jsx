@@ -91,6 +91,7 @@ export default class CreateUser extends Component {
               className="input input-user-password"
               outlined
               label="Password"
+              type="password"
               onChange={this._updatePassWord}
             />
             <TextField
@@ -101,7 +102,7 @@ export default class CreateUser extends Component {
               onChange={this._updatePostalCode}
             />
 
-            <Button type="submit" label="Submit Data" raised />
+            <Button type="submit" label="Create Account" onClick={this.props.onUserRegister} raised />
           </ThemeProvider>
         </form>
       </div>
