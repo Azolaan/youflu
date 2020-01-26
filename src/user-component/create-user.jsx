@@ -14,11 +14,64 @@ const getUserIcon = () => {
 };
 
 export default class CreateUser extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userName: null,
+      password: null,
+      postalCode: null
+    };
+  }
+
+  _updateUserName = event => {
+    this.setState({
+      userName: event.target.value
+    });
+  };
+
+  _updatePassWord = event => {
+    this.setState({
+      password: event.target.value
+    });
+  };
+
+  _updatePostalCode = event => {
+    this.setState({
+      postalCode: event.target.value
+    });
+  };
+
+  _handleSubmit = () => {
+    const { userName, password, postalCode } = this.state;
+
+    this._postData({
+      userid: userName,
+      password: password,
+      postalCode: postalCode
+    });
+  };
+
+  _postData = async (
+    url = "http://localhost:8080/auth/register",
+    data = {}
+  ) => {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json"
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return await response.json(); // parses JSON response into native JavaScript objects
+  };
+
   render() {
     return (
       <div className="user-panel create-panel">
         {getUserIcon()}
-        <form method="get">
+        <form>
           <ThemeProvider
             className="theme-provider"
             options={{
@@ -31,21 +84,24 @@ export default class CreateUser extends Component {
               outlined
               label="User Name"
               pattern="^[A-Za-z0-9]+$"
+              onChange={this._updateUserName}
               autoFocus
             />
             <TextField
               className="input input-user-password"
               outlined
               label="Password"
+              onChange={this._updatePassWord}
             />
             <TextField
               className="input input-user-postal"
               outlined
               label="Postal Code"
               pattern="([A-Za-z][0-9]){3}"
+              onChange={this._updatePostalCode}
             />
 
-            <Button type="submit" label="Submit Data" raised />
+            <Button type="submit" label="Submit Data" onClick={} raised />
           </ThemeProvider>
         </form>
       </div>
