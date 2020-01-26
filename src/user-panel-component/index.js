@@ -48,7 +48,9 @@ export default class UserPanel extends Component {
         <Dialog open={showUserPanel} onClose={toggleUserPanel}>
           <DialogTitle>User Panel</DialogTitle>
           <DialogContent>You can Modify your information.</DialogContent>
-          <TextField label="Postal Code" />
+          <div className="postal-code-input">
+            <TextField label="Postal Code" />
+          </div>
 
           <div
             className="disease-checkbox"
