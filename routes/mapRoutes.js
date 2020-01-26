@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
-const userModel = require('../models/user');
-const app = express();
+const User = require('../models/user');
+const router = express.Router();
 
-app.get('/map', async (req, res) => {
-  const users = await userModel.find({});
+router.get('/map', async (req, res) => {
+  const users = await User.find({});
   try {
     coords = [];
     users.forEach((user) => {
@@ -25,8 +25,8 @@ app.get('/map', async (req, res) => {
   }
 });
 
-app.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-module.exports = app;
+module.exports = router;
