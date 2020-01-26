@@ -1,6 +1,6 @@
-/* .app-bar .mdc-top-app-bar__section {
+.app-bar .app-bar-search {
     width: 100%;
-} */
+}
 
 .app-bar .app-bar-search-field {
     height: 40px;
@@ -10,4 +10,10 @@
 
 .app-bar .app-bar-search-field .rmwc-icon {
     bottom: 9px;
+}
+
+.app-bar .autocomplete-suggestions {
+    position: absolute;
+    margin-left: 50px;
+    background-color: white;
 }
