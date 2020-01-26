@@ -34,4 +34,17 @@ router.post('/auth/register', async (req, res) => {
   }
 });
 
+router.post('/auth/login', async (req, res) => {
+  try { 
+    const { userid, password } = req.body;
+    const user = await User.findByCredentials(userid, password);
+    if (!user) {
+      return res.status(401).send({error: 'Login failed! Check authentication credentias'});
+    }
+    res.send(user);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 module.exports = router;
