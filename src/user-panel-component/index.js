@@ -14,6 +14,7 @@ import { Checkbox } from "@rmwc/checkbox";
 import _ from "lodash";
 import diseases from "../filter/diseases";
 
+import "./index.css";
 import "@material/dialog/dist/mdc.dialog.css";
 import "@material/button/dist/mdc.button.css";
 import "@material/textfield/dist/mdc.textfield.css";
